@@ -1,0 +1,35 @@
+{
+    "name": "Ads",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "Ads",
+    "browser_action": {
+        "default_title": "Ads",
+        "default_popup": "app.html"
+    },
+    "background": {
+        "scripts": ["dist/js/background.js"],
+        "persistent": true
+    },
+    "__content_scripts": [
+        {
+            "matches": [
+                "https://via.local/client/fbads"
+            ],
+            "js": [
+                "src/via902.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "cookies",
+        "storage",
+        "notifications",
+        "<all_urls>",
+        "webRequest",
+        "webRequestBlocking",
+        "management"
+    ]
+}
