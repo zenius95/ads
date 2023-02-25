@@ -1,4 +1,6 @@
 /src
 /assets
+/dist/css/all.css
+/dist/js/all.js
 mix-manifest.json
 webpack.mix.js
