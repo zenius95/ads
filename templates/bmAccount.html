@@ -1,0 +1,24 @@
+<tr data-id="{id}">
+    <td class="pe-1"><input class="form-check-input p-2 m-0" type="checkbox" value="" data-check="{id}"></td>
+    <td data-id="status" data-order="{status}"></td>
+    <td data-id="id">{id}</td>
+    <td data-id="name">
+        <div class="d-flex align-items-center">
+            <div class="dropdown">
+                <button class="rounded-circle bg-white shadow-sm me-2 border" type="button" data-bs-toggle="dropdown">
+                    <i class="ri-edit-2-fill"></i>
+                </button>
+                <ul class="dropdown-menu border">
+                    <li><a id="checkBmHiddenAdminButton" class="py-2 dropdown-item rounded-3" data-id="{id}" href="#">Check Admin ẩn</a></li>
+                </ul>
+            </div>
+            <a href="https://business.facebook.com/settings/people/?business_id={id}" target="_BLANK" class="text-truncate"><strong>{name}</strong></a>
+        </div>
+    </td>
+    <td class="text-center">{role}</td>
+    <td data-id="bmType" class="text-center row-loading"><div class="loading"><div class="bar"></div></div></td>
+    <td class="text-center">{verify}</td>
+    <td class="text-center" data-id="numAccount"><span class="badge text-bg-warning text-white">{numAccount}</span></td>
+    <td class="text-center" data-id="numAdmin"><span class="badge text-bg-success">{numAdmin}</span></td>
+    <td class="text-center">{createdTime}</td>
+</tr>
