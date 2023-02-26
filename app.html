@@ -15,39 +15,45 @@
 	<body>
 		<div id="app" class="bg-light">
 			<div class="p-3">
-				<div class="mb-3 d-flex justify-content-between align-items-center">
-					<div class="col">
+				<div class="row mb-3 d-flex justify-content-between align-items-center">
+					<div class="col-2">
 						321
 					</div>
-					<div class="col-8">
-						<ul class="nav nav-pills d-flex" id="menu-tabs" role="tablist">
-							<li class="nav-item" role="presentation" style="width: 110px">
+					<div class="col-5 p-0">
+						<ul class="nav nav-pills d-flex justify-content-between" id="menu-tabs" role="tablist">
+							<li class="nav-item" role="presentation" style="width: 100px">
 								<a href="#" class="rounded-2 text-white p-2 px-2 d-flex flex-column align-items-center active" data-bs-toggle="pill" data-bs-target="#tab-accounts" type="button" role="tab">
 									<img src="assets/images/user.png" class="mb-2" height="20">
 									<strong>Accounts</strong>
 								</a>
 							</li>
-							<li class="nav-item" role="presentation" style="width: 110px">
+							<li class="nav-item" role="presentation" style="width: 100px">
 								<a href="#" class="rounded-2 text-white p-2 px-2 d-flex flex-column align-items-center" data-bs-toggle="pill" data-bs-target="#tab-ads-review" type="button" role="tab">
 									<img src="assets/images/ads.png" class="mb-2" height="20">
 									<strong>Ads Review</strong>
 								</a>
 							</li>
-							<li class="nav-item" role="presentation" style="width: 110px">
+							<li class="nav-item" role="presentation" style="width: 100px">
 								<a href="#" class="rounded-2 text-white p-2 px-2 d-flex flex-column align-items-center" data-bs-toggle="pill" data-bs-target="#tab-target" type="button" role="tab">
 									<img src="assets/images/target.png" class="mb-2" height="20">
 									<strong>Super Target</strong>
 								</a>
 							</li>
-							<li class="nav-item" role="presentation" style="width: 110px">
+							<!-- <li class="nav-item" role="presentation" style="width: 110px">
 								<a href="#" class="rounded-2 text-white p-2 px-2 d-flex flex-column align-items-center" data-bs-toggle="pill" data-bs-target="#tab-setting" type="button" role="tab">
 									<img src="assets/images/setting.png" class="mb-2" height="20">
 									<strong>Cài đặt</strong>
 								</a>
-							</li>
+							</li> -->
 						</ul>
 					</div>
-					<div class="col d-flex justify-content-end">
+					<div class="col">
+						<div class="text-end">
+							<strong class="d-block text-white mb-2">Trạng thái</strong>
+							<span id="accountStatus" class="badge text-bg-success"></span>
+						</div>
+					</div>
+					<div class="col-3 d-flex justify-content-end">
 						<div class="dropdown user">
 							<div class="dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
 								<div class="text-end text-white pe-3">
@@ -101,13 +107,13 @@
 										</button>
 										<ul class="dropdown-menu border">
 											<li>
-												<a class="p-2 rounded-3 dropdown-item d-flex align-items-center action-button" data-action="changeInfo" href="#">
+												<a class="p-2 pe-3 rounded-3 dropdown-item d-flex align-items-center" id="bulkChangeInfo" href="#">
 													<i class="ri-bill-fill me-3 fs-6 fw-normal"></i>
 													Thay đổi thông tin
 												</a>
 											</li>
 											<li>
-												<a class="p-2 rounded-3 dropdown-item d-flex align-items-center action-button" data-action="removeHiddenUsers" href="#">
+												<a class="p-2 pe-3 rounded-3 dropdown-item d-flex align-items-center" id="bulkHiddenAdmin" href="#">
 													<i class="ri-admin-fill me-3 fs-6 fw-normal"></i>
 													Check Admin ẩn
 												</a>
@@ -153,10 +159,7 @@
 									</div>
 									<div class="card-footer p-2">
 										<div class="d-flex align-items-center justify-content-between">
-											<div>
-												<strong class="d-block">Trạng thái</strong>
-												<span id="accountStatus" class="badge text-bg-success"></span>
-											</div>
+											<div></div>
 											<div class="d-flex align-items-center">
 												<div class="dropup-center dropup me-2">
 													<button class="btn bg-light border p-1 ps-3 d-flex align-items-center" type="button" data-bs-toggle="dropdown" style="font-size: 13px">
@@ -238,7 +241,7 @@
 								</div>
 								<div class="col-4 ps-0">
 									<div class="bg-light rounded-3 position-relative">
-										<select class="form-select fs-6 lh-1 fw-medium" id="adAccountSelect"></select>
+										<select class="form-select lh-1 fw-medium" id="adAccountSelect"></select>
 									</div>
 								</div>
 							</div>
