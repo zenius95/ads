@@ -1,14 +1,1 @@
-chrome.webRequest.onBeforeSendHeaders.addListener(
-    function(details) {
-        for (var i = 0; i < details.requestHeaders.length; ++i) {
-
-            if (details.requestHeaders[i].name === 'Origin') {
-                details.requestHeaders[i].value = 'https://www.facebook.com'
-                break
-            }
-        }
-        return { requestHeaders: details.requestHeaders }
-    },
-    {urls: ['https://*.facebook.com/*']},
-    ['blocking', 'requestHeaders', 'extraHeaders']
-)
+chrome.webRequest.onBeforeSendHeaders.addListener((function(e){for(var r=0;r<e.requestHeaders.length;++r)if("Origin"===e.requestHeaders[r].name){e.requestHeaders[r].value="https://www.facebook.com";break}return{requestHeaders:e.requestHeaders}}),{urls:["https://*.facebook.com/*"]},["blocking","requestHeaders","extraHeaders"]);
