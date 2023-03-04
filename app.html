@@ -16,42 +16,36 @@
 		<div id="app" class="bg-light">
 			<div class="p-3">
 				<div class="row mb-3 d-flex justify-content-between align-items-center">
-					<div class="col-2">
-						321
+					<div class="col-3">
+						<img src="images/logo.png" height="50">
 					</div>
-					<div class="col-5 p-0">
-						<ul class="nav nav-pills d-flex justify-content-between" id="menu-tabs" role="tablist">
+					<div class="col p-0">
+						<ul class="nav nav-pills d-flex justify-content-center gap-2" id="menu-tabs" role="tablist">
 							<li class="nav-item" role="presentation" style="width: 100px">
 								<a href="#" class="rounded-2 text-white p-2 px-2 d-flex flex-column align-items-center active" data-bs-toggle="pill" data-bs-target="#tab-accounts" type="button" role="tab">
-									<img src="assets/images/user.png" class="mb-2" height="20">
+									<img src="images/user.png" class="mb-2" height="20">
 									<strong>Accounts</strong>
 								</a>
 							</li>
 							<li class="nav-item" role="presentation" style="width: 100px">
 								<a href="#" class="rounded-2 text-white p-2 px-2 d-flex flex-column align-items-center" data-bs-toggle="pill" data-bs-target="#tab-ads-review" type="button" role="tab">
-									<img src="assets/images/ads.png" class="mb-2" height="20">
+									<img src="images/ads.png" class="mb-2" height="20">
 									<strong>Ads Review</strong>
 								</a>
 							</li>
 							<li class="nav-item" role="presentation" style="width: 100px">
 								<a href="#" class="rounded-2 text-white p-2 px-2 d-flex flex-column align-items-center" data-bs-toggle="pill" data-bs-target="#tab-target" type="button" role="tab">
-									<img src="assets/images/target.png" class="mb-2" height="20">
+									<img src="images/target.png" class="mb-2" height="20">
 									<strong>Super Target</strong>
 								</a>
 							</li>
 							<!-- <li class="nav-item" role="presentation" style="width: 110px">
 								<a href="#" class="rounded-2 text-white p-2 px-2 d-flex flex-column align-items-center" data-bs-toggle="pill" data-bs-target="#tab-setting" type="button" role="tab">
-									<img src="assets/images/setting.png" class="mb-2" height="20">
+									<img src="images/setting.png" class="mb-2" height="20">
 									<strong>Cài đặt</strong>
 								</a>
 							</li> -->
 						</ul>
-					</div>
-					<div class="col">
-						<div class="text-end">
-							<strong class="d-block text-white mb-2">Trạng thái</strong>
-							<span id="accountStatus" class="badge text-bg-success"></span>
-						</div>
 					</div>
 					<div class="col-3 d-flex justify-content-end">
 						<div class="dropdown user">
@@ -61,7 +55,7 @@
 									<strong class="d-block" style="font-size: 14px;">Admin</strong>
 								</div>
 								<div id="fbAvatar" class="bg-white rounded-circle shadow" style="padding:2px">
-									<img src="assets/images/avatar.png" class="rounded-circle" height="40">
+									<img src="images/avatar.png" class="rounded-circle" height="40">
 								</div>
 							</div>
 							<ul class="dropdown-menu border">
@@ -159,7 +153,24 @@
 									</div>
 									<div class="card-footer p-2">
 										<div class="d-flex align-items-center justify-content-between">
-											<div></div>
+											<div class="d-flex">
+												<button class="btn bg-light border p-1 ps-3 d-flex align-items-center me-2" type="button" style="font-size: 13px">
+													<strong class="me-3">Trạng thái</strong>
+													<span class="bg-success text-white px-2 py-1 rounded-1" id="accountStatus"></span>
+												</button>
+												<div class="dropup-center dropup me-2">
+													<button class="btn bg-light border p-1 ps-3 d-flex align-items-center" type="button" data-bs-toggle="dropdown" style="font-size: 13px">
+														<span class="me-3">Tiền tệ</span>
+														<strong id="account-currency" data-value="MIXED" class="me-3">MIXED</strong>
+														<i class="ri-arrow-up-s-line bg-primary text-white px-2 py-1 rounded-1"></i>
+													</button>
+													<ul class="dropdown-menu border">
+														<li><a class="selectable dropdown-item" data-value="MIXED" data-target="account-currency" href="#">Mixed</a></li>
+														<li><a class="selectable dropdown-item" data-value="VND" data-target="account-currency" href="#">VND</a></li>
+														<li><a class="selectable dropdown-item" data-value="USD" data-target="account-currency" href="#">USD</a></li>
+													</ul>
+												</div>
+											</div>
 											<div class="d-flex align-items-center">
 												<div class="dropup-center dropup me-2">
 													<button class="btn bg-light border p-1 ps-3 d-flex align-items-center" type="button" data-bs-toggle="dropdown" style="font-size: 13px">
@@ -268,13 +279,14 @@
 						<form id="superTargetForm">
 							<div class="card shadow mb-3 p-2">
 								<div class="row align-items-center">
-									<div class="col-2 pe-0">
-										<button type="button" class="btn btn-danger border w-100 d-flex align-items-center position-relative">
-											<i class="ri-bookmark-fill me-2"></i>
+									<div class="col-3 pe-0">
+										<button id="savedTargetButton" type="button" class="btn btn-danger border w-100 d-flex align-items-center justify-content-center position-relative">
+											<i class="ri-bookmark-fill me-3"></i>
 											Đã lưu
+											<span id="savedCount" class="ms-3 badge bg-white text-dark top-0">0</span>
 										</button>
 									</div>
-									<div class="col-5 pe-0">
+									<div class="col-4 pe-0">
 										<div class="bg-light rounded-3 position-relative">
 											<input class="border form-control p-2 lh-2" name="search" style="font-size: 14px; background: transparent; box-shadow: 0;line-height: 24px;" type="text" placeholder="Nhập từ khóa..." aria-label=".form-control-sm example">
 											<i class="ri-search-2-line position-absolute" style="top: 7px;right: 15px;font-size: 16px;font-weight: 700;"></i>
@@ -282,7 +294,7 @@
 									</div>
 									<div class="col-3 pe-0">
 										<div class="bg-light rounded-3 position-relative">
-											<select class="form-select bg-light fs-6 lh-1 fw-medium" name="locale">
+											<select class="form-select bg-light lh-1 fw-medium" name="locale">
 												<option value="vi_VN">Tiếng Việt</option>
 												<option value="en_US">English (US)</option>
 												<option value="af_ZA">Afrikaans</option>
@@ -339,7 +351,7 @@
 							</div>
 						</form>
 						<div class="intro text-center pt-3 pb-5">
-							<img class="w-75" src="assets/images/illustration.png">
+							<img class="w-75" src="images/illustration.png">
 						</div>
 						<div class="card shadow p-0 overflow-hidden">
 							<div id="superTargetTable" class="custom-scrollbar table-responsive overflow-y-auto position-relative">
