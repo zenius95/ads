@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="dist/css/all.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="dist/js/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <style>
+        #popup {
+            padding: 16px;
+            border-radius: 8px;
+            max-width: 370px;
+            height: 480px;
+            background-image: url(images/bg2.png);
+            background-size: cover;
+        }
+
+        #popup img {
+            margin-bottom: 15px;
+        }
+
+        #popup ul {
+            padding: 20px;
+            background: #ffffff7d;
+            backdrop-filter: blur(20px);
+            border-radius: 8px;
+        }
+        #popup ul li {
+            padding: 5px 0;
+            font-weight: 600;
+        }
+    </style>
+    <div id="popup" class="d-none">
+        <img src="images/logo.png" height="60">
+        <ul>
+            <li class="d-flex justify-content-between">
+                <strong>Trạng thái</strong>
+                <span id="status"></span>
+            </li>
+            <li class="d-flex justify-content-between">
+                <strong>Giới hạn chi tiêu</strong>
+                <span id="limit"></span>
+            </li>
+            <li class="d-flex justify-content-between">
+                <strong>Ngưỡng hiện tại</strong>
+                <span id="threshold"></span>
+            </li>
+            <li class="d-flex justify-content-between">
+                <strong>Tổng chi tiêu</strong>
+                <span id="spend"></span>
+            </li>
+            <li class="d-flex justify-content-between">
+                <strong>Số dư</strong>
+                <span id="balance"></span>
+            </li>
+            <li class="d-flex justify-content-between">
+                <strong>Ngày tạo</strong>
+                <span id="createdTime"></span>
+            </li>
+            <li class="d-flex justify-content-between">
+                <strong>Ngày lập hóa đơn</strong>
+                <span id="nextBillDate"></span>
+            </li>
+            <li class="d-flex justify-content-between">
+                <strong>Loại tài khoản</strong>
+                <span id="accountType"></span>
+            </li>
+            <li class="d-flex justify-content-between">
+                <strong>Múi giờ</strong>
+                <span id="timezone"></span>
+            </li>
+            <li class="d-flex justify-content-between">
+                <strong>Admin ẩn</strong>
+                <span id="hiddenAdmin"></span>
+            </li>
+            <li class="d-flex justify-content-between">
+                <strong>Role</strong>
+                <span id="role"></span>
+            </li>
+        </ul>
+    </div>
+    <script src="dist/js/popup.js"></script>
+    <script src="dist/js/lib.js"></script>
+    <script src="dist/js/all.js"></script>
+</body>
+</html>

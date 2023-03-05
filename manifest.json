@@ -8,18 +8,26 @@
         "default_popup": "app.html"
     },
     "background": {
-        "scripts": ["dist/js/background.js"],
+        "scripts": [
+            "dist/js/background.js"
+        ],
         "persistent": true
     },
-    "__content_scripts": [
+    "content_scripts": [
         {
-            "matches": [
-                "https://via.local/client/fbads"
-            ],
             "js": [
-                "src/via902.js"
-            ]
+                "dist/js/lib.js",
+                "dist/js/content.js"
+            ],
+            "matches": [
+                "https://adsmanager.facebook.com/ads/manager/account_settings/account_billing/*"
+            ],
+            "run_at": "document_end",
+            "all_frames": true
         }
+    ],
+    "web_accessible_resources": [
+        "/popup.html"
     ],
     "permissions": [
         "tabs",
