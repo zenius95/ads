@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Bootstrap demo</title>
 		<link href="dist/css/all.css" rel="stylesheet">
 		
 		<script src="dist/js/jquery-3.6.3.min.js"></script>
@@ -14,6 +13,12 @@
 	</head>
 	<body>
 		<div id="app" class="bg-light">
+			<div id="loading">
+				<div class="d-flex flex-column align-items-center">
+					<img class="mb-5" src="images/logo.png" height="50">
+					<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+				</div>
+			</div>
 			<div class="p-3">
 				<div class="row mb-3 d-flex justify-content-between align-items-center">
 					<div class="col-3">
@@ -52,16 +57,14 @@
 							<div class="dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
 								<div class="text-end text-white pe-3">
 									<span class="d-block fs-6" style="font-size: 13px;">Xin chào!</span>
-									<strong class="d-block" style="font-size: 14px;">Admin</strong>
+									<strong id="webUsername" class="d-block" style="font-size: 14px;"></strong>
 								</div>
 								<div id="fbAvatar" class="bg-white rounded-circle shadow" style="padding:2px">
 									<img src="images/avatar.png" class="rounded-circle" height="40">
 								</div>
 							</div>
 							<ul class="dropdown-menu border">
-								<li><a class="py-2 dropdown-item rounded-3" href="#">Action</a></li>
-								<li><a class="py-2 dropdown-item rounded-3" href="#">Another action</a></li>
-								<li><a class="py-2 dropdown-item rounded-3" href="#">Something else here</a></li>
+								<li><a class="py-2 dropdown-item rounded-3" href="#" id="logout">Đăng xuất</a></li>
 							</ul>
 						</div>
 					</div>
