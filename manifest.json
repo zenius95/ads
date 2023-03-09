@@ -42,6 +42,7 @@
     "permissions": [
         "tabs",
         "activeTab",
+        "cookies",
         "storage",
         "notifications",
         "<all_urls>",
